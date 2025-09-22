@@ -13,12 +13,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
     - name: Build and Push Docker image
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: ${{secrets.REGISTRY_URL}}/sso/sso-test-client
         tags: latest
-        dockerfile: ./Dockerfile
         registry: ${{secrets.REGISTRY_URL}}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
