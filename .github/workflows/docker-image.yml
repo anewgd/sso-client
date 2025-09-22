@@ -18,6 +18,7 @@ jobs:
       with:
         image: ${{secrets.REGISTRY_URL}}/sso/sso-test-client
         tags: latest
+        dockerfile: ./Dockerfile
         registry: ${{secrets.REGISTRY_URL}}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
