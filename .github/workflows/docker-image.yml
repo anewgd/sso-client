@@ -14,12 +14,13 @@ jobs:
 
     steps:
     - name: Build and Push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
+      uses: mr-smithers-excellent/docker-build-push@v6
       with:
-        image: a1super/github-actions-demo-app
-        registry: docker.io
-        username: ${{ secrets.DOCKERHUB_USERNAME }}
-        password: ${{ secrets.DOCKERHUB_TOKEN }}
+        image: ${{secrets.REGISTRY_URL}}/sso/sso-test-client
+        tags: latest
+        registry: ${{secrets.REGISTRY_URL}}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
 
               
       
