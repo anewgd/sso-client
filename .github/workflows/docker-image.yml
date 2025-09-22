@@ -51,7 +51,7 @@ jobs:
             username: ${{ secrets.REMOTE_USER }}
             key: ${{ secrets.REMOTE_SSH_KEY }}
             script: |
-              docker pull {{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }}
+              docker pull ${{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }}
 
       
       
