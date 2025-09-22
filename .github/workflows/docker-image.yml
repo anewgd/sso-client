@@ -32,23 +32,12 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USER }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
-    # - name: Generate image tag
-    #   run: |
-    #       echo "sha=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
-    #       echo "timestamp=$(date +'%Y%m%d-%H%M%S')" >> $GITHUB_OUTPUT
         
     - name: Build and Push Docker image
-      # uses: mr-smithers-excellent/docker-build-push@v6
-      # with:
-      #   image: a1super/sso-client
-      #   registry: docker.io
-      #   username: ${{ secrets.DOCKER_HUB_USER }}
-      #   password: ${{ secrets.DOCKER_HUB_TOKEN }}
       uses: docker/build-push-action@v6.18.0
       with:
         context: .
         push: true
         tags: ${{secrets.DOCKER_HUB_USER}}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }}
-
               
       
