@@ -13,14 +13,13 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     outputs:
-      IMAGE_TAG: ${{ steps.set-tag.outputs.IMAGE_TAG }}
+      IMAGE_TAG: ${{ steps.gen_tag.outputs.IMAGE_TAG }}
     steps:
       - name: Generate image tag
         id: gen_tag
         run: |
           ts=$(date +'%Y%m%d-%H%M%S')
           echo "IMAGE_TAG=${GITHUB_SHA::8}_$ts" >> $GITHUB_OUTPUT
-          echo "Generated image tag ${{ steps.set-tag.outputs.IMAGE_TAG }}"
   
   build:
     runs-on: ubuntu-latest
