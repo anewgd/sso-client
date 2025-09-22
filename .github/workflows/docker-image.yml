@@ -19,7 +19,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6
       with:
         image: sso-test-client
-        tags: ${{secrets.REGISTRY_URL}}/sso/sso-test-client:latest
+        tags: latest
         registry: ${{secrets.REGISTRY_URL}}
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
