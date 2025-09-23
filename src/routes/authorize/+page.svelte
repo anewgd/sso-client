@@ -1,9 +1,12 @@
 <script>
+	import { page } from '$app/state';
+
     let { data } = $props();
 
     let message = $state("");
 
-    const urlParams = new URLSearchParams(window.location.search);
+
+    const urlParams = new URLSearchParams(page.url.search);
 
     let code = urlParams.get('code');
     let auth_state = urlParams.get('state'); 
