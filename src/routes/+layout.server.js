@@ -8,7 +8,7 @@ export async function load() {
     auth_url.searchParams.append('tenant_id', config.TENANT_ID);
     auth_url.searchParams.append('scope', 'openid');
     auth_url.searchParams.append('state', '12345');
-    auth_url.searchParams.append('prompt', 'phone');
+    auth_url.searchParams.append('prompt', 'email');
    return {
       config: {
          authorization_url: config.AUTHORIZATION_URL,
