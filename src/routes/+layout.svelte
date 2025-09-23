@@ -6,7 +6,7 @@
 </script>
 
 <div class="font-size-2xl m-4 flex justify-center bg-yellow-300 p-4 border-radius-xl">
-	<h1>SSO Test Client</h1>
+	<h1>SSO Test Client. v0.0.1</h1>
 </div> 	
 
 <svelte:head>
