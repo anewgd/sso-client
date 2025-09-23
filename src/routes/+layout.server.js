@@ -5,7 +5,7 @@ export async function load() {
     auth_url.searchParams.append('client_id', config.CLIENT_ID);
     auth_url.searchParams.append('redirect_uri', config.REDIRECT_URI);
     auth_url.searchParams.append('response_type', 'code');
-    auth_url.searchParams.append('tenant', config.TENANT_ID);
+    auth_url.searchParams.append('tenant_id', config.TENANT_ID);
     auth_url.searchParams.append('scope', 'openid');
     auth_url.searchParams.append('state', '12345');
     auth_url.searchParams.append('prompt', 'phone');
