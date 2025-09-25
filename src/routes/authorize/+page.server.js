@@ -20,7 +20,7 @@ export async function load({url}) {
 
     return {
         error: err,
-        tokenResp: tokenResponse.json()
+        tokenResp: await tokenResponse.json()
     }
 }
 
