@@ -20,9 +20,9 @@
 
     let auth_state = urlParams.get('state'); 
 
-    const fetchToken = async () => {
+    const fetchToken = () => {
         try {
-            tokenResponse = await fetch("/token", {
+            tokenResponse = fetch("/token", {
             body: JSON.stringify({code}),
             })
 
