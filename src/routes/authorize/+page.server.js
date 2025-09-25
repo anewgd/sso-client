@@ -17,10 +17,14 @@ export async function load({url}) {
             err = true,
             console.log("error occured", String(e))
         }
+    
+    const resp = await tokenResponse.json()
+
+    console.log("RESP", resp)
 
     return {
         error: err,
-        tokenResp: await tokenResponse.json()
+        tokenResp: resp
     }
 }
 
