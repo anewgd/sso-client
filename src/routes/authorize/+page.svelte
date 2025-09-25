@@ -20,9 +20,9 @@
 
     let auth_state = urlParams.get('state'); 
 
-    const fetchToken = () => {
+    const fetchToken = async () => {
         try {
-            tokenResponse = fetch("/token", {
+            tokenResponse = await fetch("/token", {
                 method: 'POST',
                 body: JSON.stringify({code}),
             })
@@ -44,7 +44,7 @@
 
 <div>
     <button  onclick="{fetchToken}" class="m-4 p-3 border-radius-2xl bg-black font-weight-md text-white flex">Get Token
-        
+
     </button></div>
 
 {#if tokenLoadSuccessful }
