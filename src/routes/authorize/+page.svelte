@@ -43,7 +43,7 @@
     message = "Will send token request to " + data.config.token_url + " with code: " + code + " and state: " + auth_state;
 </script>
 
-<div onload="{fetchToken}"></div>
+<div>{message}</div>
 
 {#if tokenLoadSuccessful }
     <div class="font-size-2xl m-4 flex justify-center bg-green-300 p-4 border-radius-xl">{tokenResponse}</div>
