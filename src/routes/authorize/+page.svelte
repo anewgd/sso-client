@@ -33,6 +33,10 @@
             errMsg = e instanceof Error ? e : String(e)
         }
     }
+
+    $effect(() => {
+        fetchToken()
+    })
      
 
 
