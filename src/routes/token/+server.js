@@ -4,7 +4,7 @@ import axios from "axios";
 
 
 let reqBody = {
-    grant_type: "code",
+    grant_type: "authorization_code",
     REDIRECT_URI: config.REDIRECT_URI,
     code: ""
 }
