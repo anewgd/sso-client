@@ -34,16 +34,16 @@
         }
     }
 
-    $effect(() => {
-        fetchToken()
-    })
+    // $effect(() => {
+    //     fetchToken()
+    // })
      
 
 
     message = "Will send token request to " + data.config.token_url + " with code: " + code + " and state: " + auth_state;
 </script>
 
-<div>{message}</div>
+<div><button  onclick="{fetchToken}" class="m-4 p-3 border-radius-2xl bg-black font-weight-md text-white flex">Get Token</button></div>
 
 {#if tokenLoadSuccessful }
     <div class="font-size-2xl m-4 flex justify-center bg-green-300 p-4 border-radius-xl">{tokenResponse}</div>
