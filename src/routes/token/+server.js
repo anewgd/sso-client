@@ -33,6 +33,8 @@ export async function POST({request}) {
 
     let resp = await response.json()
 
+    console.log(resp)
+
     return resp
 
 }
