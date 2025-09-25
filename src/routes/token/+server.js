@@ -35,6 +35,11 @@ export async function POST({request}) {
 
     console.log(resp)
 
-    return resp
+    return new Response(JSON.stringify(resp), {
+        status: response.status,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
 
 }
