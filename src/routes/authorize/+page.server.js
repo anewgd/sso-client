@@ -106,7 +106,7 @@ export async function load(event) {
         httpOnly: true,
         secure: false,
         path: '/',
-        sameSite: 'none',
+        sameSite: 'lax',
         maxAge: 60 * 60 * 24,
     });
     return {
