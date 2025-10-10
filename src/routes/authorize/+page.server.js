@@ -105,8 +105,7 @@ export async function load(event) {
     cookies.set('session_id', sid, {
         httpOnly: true,
         path: '/',
-        sameSite: 'lax',
-        // secure: true,
+        sameSite: 'none',
         maxAge: 60 * 60 * 24,
     });
     return {
