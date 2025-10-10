@@ -48,9 +48,20 @@
 
     </button></div>
 
-{#if !data.error }
-    <div class="font-size-2xl m-4 flex justify-center bg-green-300 p-4 border-radius-xl">{data.tokenResp}</div>
-{:else if data.error }
-    <div class="font-size-2xl m-4 flex justify-center bg-red-300 p-4 border-radius-xl">{data.tokenResp}</div>
-{/if}
+<main class="m-4">
+    {#if !data.error }
+
+    <div class="grid grid-cols-2 grid-rows-4 gap-4">
+        <div class="w-1/6">Access Token</div>
+        <div class=" border-1 border-yellow-300 p-3 w-5/6 break-words whitespace-normal">{data.tokenResp.data.access_token}</div>
+         <div class="w-1/6">ID Token</div>
+        <div class=" border-1 border-yellow-300 p-3 w-5/6 break-words whitespace-normal">{data.tokenResp.data.id_token}</div>
+        <div class="w-1/6">Refresh Token</div>
+        <div class=" border-1 border-yellow-300 p-3 w-5/6 break-words whitespace-normal">{data.tokenResp.data.refresh_token}</div>
+    </div>
+    {:else if data.error }
+    <div class="font-size-2xl m-4 flex justify-center bg-red-300 p-4 border-radius-xl">{data.tokenResp.data}</div>
+{   /if}
+</main>
+
 

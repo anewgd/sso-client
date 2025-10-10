@@ -1,14 +1,10 @@
 import { REDIRECT_URI } from "$env/static/private";
 import { config } from "$lib/config/config.js";
+import { verifyPaseto } from "$lib/server/verifyToken.js";
 import axios from "axios";
+import { randomUUID } from 'crypto';
 
-
-let reqBody = {
-    grant_type: "authorization_code",
-    REDIRECT_URI: config.REDIRECT_URI,
-    code: ""
-}
-
+import { redisSessionStore } from "$lib/server/redisSessionStore.js";
 
 export async function POST({request}) {
 
@@ -16,10 +12,10 @@ export async function POST({request}) {
     let url = config.TOKEN_URL;
 
     let reqBody = {
-    grant_type: "code",
+    grant_type: "authorization_code",
     REDIRECT_URI: config.REDIRECT_URI,
     code: code
-}
+    }   
     const response = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(reqBody),
@@ -33,7 +29,6 @@ export async function POST({request}) {
 
     let resp = await response.json()
 
-    console.log(resp)
 
     return new Response(JSON.stringify(resp), {
         status: response.status,

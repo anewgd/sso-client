@@ -1,6 +1,6 @@
 import { config } from "$lib/config/config.js";
 
-export async function load() {
+export async function load({locals}) {
    const auth_url = new URL(config.AUTHORIZATION_URL)
     auth_url.searchParams.append('client_id', config.CLIENT_ID);
     auth_url.searchParams.append('redirect_uri', config.REDIRECT_URI);
@@ -20,7 +20,8 @@ export async function load() {
          userinfo_url: config.USERINFO_URL,
       },
 
-      auth_url: auth_url.toString()
+      auth_url: auth_url.toString(),
+      user: locals.user,
     
 
    }
