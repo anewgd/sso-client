@@ -40,14 +40,13 @@ export async function POST({ request, cookies }) {
 
     const response = await fetch(logoutURL.toString(), {
 	    method: 'GET',
-	    // headers: { Authorization: authHeader }
+	    headers: { Authorization: authHeader }
     });
 
+	
+
     return new Response(null, {
-		status: 302,
-		headers: {
-			Location: logoutURL.toString(),
-		}
+		status: response.status,
 	});
     // let body = await request.json();
     // console.log(request.body);
