@@ -40,7 +40,7 @@ export async function POST({ request, cookies }) {
 
     const response = await fetch(logoutURL.toString(), {
 	    method: 'GET',
-	    headers: { Authorization: authHeader }
+	    // headers: { Authorization: authHeader }
     });
 
     return new Response(null, {
