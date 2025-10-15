@@ -6,9 +6,11 @@
 
 	async function logout() {
     	// call your logout endpoint
-   	 	await fetch('/v1/logout', { method: 'POST' });
+   	 	const resp = await fetch('/v1/logout', { method: 'POST' });
+
+		const j = await resp.json()
     	// then reload or navigate to home
-    	window.location.href = '/';
+    	window.location.href = j.r;
   }
 </script>
 

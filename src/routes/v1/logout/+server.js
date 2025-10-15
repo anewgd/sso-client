@@ -43,9 +43,12 @@ export async function POST({ request, cookies }) {
 	//     headers: { Authorization: authHeader }
     // });
 
-    return new Response(null, {
+	const resp = {
+		r: logoutURL.toString()
+	}
+    return new Response(JSON.stringify(resp), { 
 		status: 302,
-		headers: { Location: logoutURL.toString()}
+		// headers: { Location: logoutURL.toString()}
 	});
     // let body = await request.json();
     // console.log(request.body);
