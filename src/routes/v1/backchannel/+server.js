@@ -1,9 +1,12 @@
 import { json } from '@sveltejs/kit';
 
 import { verifyPaseto } from '$lib/server/verifyToken.js';
-import { config } from '$lib/config/config.js';
+import { config as env_config } from '$lib/config/config.js';
 import { redisSessionStore } from '$lib/server/redisSessionStore.js';
 
+export const config = {
+	csrf: false
+};
 export async function POST({request, cookies}) {
     try {
         const body = await request.text();
@@ -24,7 +27,7 @@ export async function POST({request, cookies}) {
             return json({ error: 'Missing aud from logout token' }, { status: 400 });
         }
 
-        if (logoutTokenPayload.aud !== config.CLIENT_ID) {
+        if (logoutTokenPayload.aud !== env_config.CLIENT_ID) {
             return json({error: 'unkown audience'}, {status: 400});
         }
 
