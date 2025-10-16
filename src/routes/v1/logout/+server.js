@@ -17,6 +17,7 @@ export async function POST({ request, cookies }) {
 		} catch (e) {
 			console.error('Failed to destroy session:', e);
 		}
+		
 		cookies.delete('session_id', { path: '/' });
 	}
 
