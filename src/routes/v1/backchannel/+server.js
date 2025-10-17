@@ -36,7 +36,7 @@ export async function POST({request, cookies}) {
             return json({error: 'unkown audience'}, {status: 400});
         }
 
-        if (logoutTokenPayload.iss === "http://localhost:8001" ) {
+        if (logoutTokenPayload.iss !== "http://localhost:8001" ) {
             console.error('Error :>> ', "invalid 'issuer' for token");
             return json({ error: 'Unknown token issuer' }, { status: 400 });
         }
