@@ -17,6 +17,7 @@ export async function POST({request, cookies}) {
             return json({ error: 'Missing logout_token' }, { status: 400 });
         }
 
+        console.log("TOKEN", logoutToken);
         const logoutTokenPayload = await verifyPaseto(logoutToken)
 
         if (!logoutTokenPayload.sub) {
