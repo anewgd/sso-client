@@ -18,6 +18,7 @@ export async function POST({request, cookies}) {
         }
 
         console.log("TOKEN", logoutToken);
+        
         const logoutTokenPayload = await verifyPaseto(logoutToken)
 
         if (!logoutTokenPayload.sub) {
@@ -59,4 +60,8 @@ export async function POST({request, cookies}) {
          console.error('Logout token verification failed:', error);
          return json({ error: `Logout token verification failed: ${error}` }, { status: 400 });
     }
+
+    return new Response(null, {
+        status: 200,
+    })
 }

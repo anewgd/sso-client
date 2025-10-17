@@ -21,6 +21,6 @@ export async function verifyPaseto(token: string) {
     return payload;
   } catch (err) {
     console.error('❌ PASETO verification failed:', err);
-    throw new Error('Invalid or expired token');
+    throw new Error(`Invalid or expired token: ${err}`);
   }
 }
