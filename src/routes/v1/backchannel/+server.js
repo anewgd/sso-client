@@ -18,30 +18,36 @@ export async function POST({request, cookies}) {
         }
 
         console.log("TOKEN", logoutToken);
-        
+
         const logoutTokenPayload = await verifyPaseto(logoutToken)
 
         if (!logoutTokenPayload.sub) {
+            console.error('Error :>> ', "no 'sub' in logout token");
             return json({ error: 'Missing sub from logout token' }, { status: 400 });
         }
 
         if (!logoutTokenPayload.aud) {
+            console.error('Error :>> ', "no 'aud' in logout token");
             return json({ error: 'Missing aud from logout token' }, { status: 400 });
         }
 
         if (logoutTokenPayload.aud !== env_config.CLIENT_ID) {
+            console.error('Error :>> ', `'aud' doesn't match ${env_config.CLIENT_ID} in logout token`);
             return json({error: 'unkown audience'}, {status: 400});
         }
 
         if (logoutTokenPayload.iss === "http://localhost:8001" ) {
+            console.error('Error :>> ', "invalid 'issuer' for token");
             return json({ error: 'Unknown token issuer' }, { status: 400 });
         }
 
         if (!logoutTokenPayload.events) {
+            console.error('Error :>> ', "missing 'events' field for token");
             return json({ error: 'Missing events field' }, { status: 400 });
         }
 
         if (logoutTokenPayload.events !== '{"http://schemas.openid.net/event/backchannel-logout":{}}' ) {
+            console.error('Error :>> ', `'events' doesn't match '{"http://schemas.openid.net/event/backchannel-logout":{}}' in logout token`);
             return json({ error: 'Invalid events field' }, { status: 400 });
         }
 
