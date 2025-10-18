@@ -52,7 +52,7 @@ jobs:
             key: ${{ secrets.REMOTE_SSH_KEY }}
             script: |
               docker pull ${{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }}
-              docker service update --image ${{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }} client1_sso_client
-
+              docker service update --image ${{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }} client1_sso_client_1
+              docker service update --image ${{ secrets.DOCKER_HUB_USER }}/sso-client:${{ needs.setup.outputs.IMAGE_TAG }} client2_sso_client_2
       
       

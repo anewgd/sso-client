@@ -59,7 +59,7 @@ export async function POST({request, cookies}) {
             } catch (e) {
                 console.error('Failed to destroy session:', e);
             }
-                
+                console.log(`removed session ${session_id} from redis`);
                 cookies.delete('session_id', { path: '/' });
             }
     } catch(error) {
