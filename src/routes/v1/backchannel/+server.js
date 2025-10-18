@@ -52,6 +52,8 @@ export async function POST({request, cookies}) {
         }
 
         const session_id = cookies.get('session_id');
+
+        console.log('SESSION_ID :>> ', session_id);
         
         if (session_id) {
             try {
