@@ -102,13 +102,17 @@ export async function load(event) {
 
     await redisSessionStore.set(session)
 
+    console.log('INFO :>> REDIS session set');
+    
     cookies.set('session_id', sid, {
         httpOnly: true,
         secure: true,
         path: '/',
-        sameSite: 'lax',
+        sameSite: 'strict',
         maxAge: 60 * 60 * 24,
     });
+
+    console.log("INFO :>> Cookie set");
     return {
         error: err,
         tokenResp: resp
