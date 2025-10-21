@@ -15,4 +15,5 @@ export const config = {
   PAESTO_PUB_KEY: process.env.PAESTO_PUB_KEY === undefined ? "" : process.env.PAESTO_PUB_KEY,
   LOGOUT_URL: process.env.LOGOUT_URL === undefined ? "" : process.env.LOGOUT_URL,
   POST_LOGOUT_REDIRECT_URI: process.env.POST_LOGOUT_REDIRECT_URI === undefined ? "" : process.env.POST_LOGOUT_REDIRECT_URI,
+  ORIGIN: process.env.ORIGIN === undefined ? "" : process.env.ORIGIN,
 };
