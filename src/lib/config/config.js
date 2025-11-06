@@ -16,4 +16,5 @@ export const config = {
   LOGOUT_URL: process.env.LOGOUT_URL === undefined ? "" : process.env.LOGOUT_URL,
   POST_LOGOUT_REDIRECT_URI: process.env.POST_LOGOUT_REDIRECT_URI === undefined ? "" : process.env.POST_LOGOUT_REDIRECT_URI,
   ORIGIN: process.env.ORIGIN === undefined ? "" : process.env.ORIGIN,
+  SSO_ORIGIN: process.env.SSO_ORIGIN === undefined ? "" : process.env.SSO_ORIGIN,
 };
