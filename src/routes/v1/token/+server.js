@@ -22,7 +22,7 @@ export async function POST({request}) {
         headers: {
             "Content-Type": "application/json",
             "Authorization": 'Basic ' + Buffer.from(config.CLIENT_ID + ":" + config.CLIENT_SECRET).toString("base64"),
-            "Origin": config.ORIGIN,
+            // "Origin": config.ORIGIN,
         },
         credentials: "include"
 
