@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-node';
-import {c} from './src/lib/config/config.js';
+import {config as c} from './src/lib/config/config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = { 

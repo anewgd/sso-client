@@ -1,4 +1,3 @@
-import { LOGOUT_URL, PAESTO_PUB_KEY, POST_LOGOUT_REDIRECT_URL } from "$env/static/private";
 import dotenv from "dotenv";
 
 dotenv.config();

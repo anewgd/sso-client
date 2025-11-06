@@ -3,7 +3,6 @@ import { config } from "$lib/config/config"
 import { verifyPaseto } from "$lib/server/verifyToken.js";
 import { randomUUID } from 'crypto';
 import { redisSessionStore } from "$lib/server/redisSessionStore.js";
-import { userInfo } from "os";
 
 export async function load(event) {
 
