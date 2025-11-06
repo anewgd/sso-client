@@ -6,7 +6,7 @@ const config = {
     kit: { adapter: adapter(), 
     csrf: {
              trustedOrigins: [
-                c.SSO_ORIGIN,
+                "https://ssoapi-stage.automatrix.et",
                 'http://localhost:3001'
     ],
 } } };
