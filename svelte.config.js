@@ -5,9 +5,9 @@ import { config as c } from './src/lib/config/config.js';
 const config = {
 	kit: {
 		adapter: adapter(),
-		// csrf: {
-		// 	trustedOrigins: ['https://ssoapi-stage.automatrix.et', 'http://localhost:3001']
-		// }
+		csrf: {
+			trustedOrigins: ['https://ssoapi-stage.automatrix.et', 'http://localhost:3001']
+		}
 	}
 };
 
