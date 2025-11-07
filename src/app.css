@@ -2,9 +2,8 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
-
 @layer base {
-  body {
-    font-family: 'Inter', sans-serif;
-  }
+	body {
+		font-family: 'Inter', sans-serif;
+	}
 }

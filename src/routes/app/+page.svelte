@@ -1,7 +1,7 @@
 <script>
-    let {data} = $props()
+	let { data } = $props();
 </script>
 
 <div>
-    <p>{data.user}</p>
+	<p>{data.user}</p>
 </div>
